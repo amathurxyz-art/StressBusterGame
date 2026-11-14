@@ -41,8 +41,8 @@
 			<tr><td style="height:100px" id="R4C1"> </td><td style="height:100px" id="R4C2"> </td><td style="height:100px" id="R4C3"> </td><td style="height:100px" id="R4C4"> </td><td style="height:100px" id="R4C5"> </td></tr>
 			<tr><td style="height:100px" id="R5C1"> </td><td style="height:100px" id="R5C2"> </td><td style="height:100px" id="R5C3"> </td><td style="height:100px" id="R5C4"> </td><td style="height:100px" id="R5C5"> </td></tr>
 			<tr>
-				<td style="width:200px;height:100px;" id="Fkeypress"><img src='Game\F_Key.png'/></td>
-				<td style="width:200px;height:100px;" id="Rkeypress"><img src='Game\R_Key.png'/></td>
+				<td style="width:200px;height:100px;" id="Ckeypress"><img src='Game\V_Key.png'/></td>
+				<td style="width:200px;height:100px;" id="Vkeypress"><img src='Game\C_Key.png'/></td>
 				<td style="width:200px;height:100px"> </td>
 				<td style="width:200px;height:100px"></td>
 				<td style="width:200px;height:100px" id="Pkeypress"><img src='Game\P_Key.png'> </td>
@@ -54,16 +54,16 @@
 				<td>Toggle pause: P</td>
 			</tr>
 			<tr>
-				<td> R (pressed) + Click: PMCR, PunchIn </td>
+				<td> V (VPN) (pressed) + Click: Accept Rating, PunchIn </td>
 			</tr>
 			<tr>
-				<td> F (pressed) + Click: USTimeSheet, Deployment </td>
+				<td> C (Client Machine) (pressed) + Click: Client Timesheet, Deployment Report </td>
 			</tr>
 			<tr>
 				<td> No action: -10 </td>
 			</tr>
 			<tr>
-				<td> Phising click: -1000, PMCR/PunchIn/WSR/Workday: 100, Others: 10 </td>
+				<td> Phising click: -1000, Accept Rating/PunchIn/Weekly Status/Company Timesheet: 100, Others: 10 </td>
 			</tr>
 			<tr>
 				<td> Score <0: Teri to  </td>
@@ -85,29 +85,29 @@
 			togglePause();
 		});
 		
-		document.getElementById('Fkeypress').addEventListener("touchstart", function(e) {
+		document.getElementById('Ckeypress').addEventListener("touchstart", function(e) {
 			if (keyPressed=='f') {
 				keyPressed='';
-				document.getElementById('Fkeypress').style.backgroundColor="DarkSlateGray";
-				document.getElementById('Rkeypress').style.backgroundColor="DarkSlateGray";
+				document.getElementById('Ckeypress').style.backgroundColor="DarkSlateGray";
+				document.getElementById('Vkeypress').style.backgroundColor="DarkSlateGray";
 			} else {
 				keyPressed='f';
 				console.log('F mousedown');
-				document.getElementById('Fkeypress').style.backgroundColor="red";
-				document.getElementById('Rkeypress').style.backgroundColor="DarkSlateGray";
+				document.getElementById('Ckeypress').style.backgroundColor="red";
+				document.getElementById('Vkeypress').style.backgroundColor="DarkSlateGray";
 			}		
 		});
 		
-		document.getElementById('Rkeypress').addEventListener("touchstart", function(e) {
+		document.getElementById('Vkeypress').addEventListener("touchstart", function(e) {
 			if (keyPressed=='r') {
 				keyPressed='';
-				document.getElementById('Fkeypress').style.backgroundColor="DarkSlateGray";
-				document.getElementById('Rkeypress').style.backgroundColor="DarkSlateGray";
+				document.getElementById('Ckeypress').style.backgroundColor="DarkSlateGray";
+				document.getElementById('Vkeypress').style.backgroundColor="DarkSlateGray";
 			} else {
 				keyPressed='r';
 				console.log('R mousedown');
-				document.getElementById('Fkeypress').style.backgroundColor="DarkSlateGray";
-				document.getElementById('Rkeypress').style.backgroundColor="red";
+				document.getElementById('Ckeypress').style.backgroundColor="DarkSlateGray";
+				document.getElementById('Vkeypress').style.backgroundColor="red";
 			}
 		});
 	
@@ -120,15 +120,15 @@
 		cellIDs = ["C1","C1","C1","C1","C1"];
 		keyPressed="";
 		activity = [
-			['Deployment','f',10],
+			['Deployment Report','f',10],
 			['MeetingAccept','',10],
 			['MonthlyStatus','',10],
 			['Phishing','',-1000],
-			['PMCR','r',100],
+			['Accept Rating','r',100],
 			['PunchIn','r',100],
-			['USTimeSheet','f',10],
-			['Workday','',100],
-			['WSR','',100]
+			['Client Timesheet','f',10],
+			['Company Timesheet','',100],
+			['Weekly Status','',100]
 		];
 			
 		function evaluateScore(column) {
