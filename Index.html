@@ -86,26 +86,24 @@
 		});
 		
 		document.getElementById('Ckeypress').addEventListener("touchstart", function(e) {
-			if (keyPressed=='f') {
+			if (keyPressed=='c') {
 				keyPressed='';
 				document.getElementById('Ckeypress').style.backgroundColor="DarkSlateGray";
 				document.getElementById('Vkeypress').style.backgroundColor="DarkSlateGray";
 			} else {
-				keyPressed='f';
-				console.log('F mousedown');
+				keyPressed='c';
 				document.getElementById('Ckeypress').style.backgroundColor="red";
 				document.getElementById('Vkeypress').style.backgroundColor="DarkSlateGray";
 			}		
 		});
 		
 		document.getElementById('Vkeypress').addEventListener("touchstart", function(e) {
-			if (keyPressed=='r') {
+			if (keyPressed=='v') {
 				keyPressed='';
 				document.getElementById('Ckeypress').style.backgroundColor="DarkSlateGray";
 				document.getElementById('Vkeypress').style.backgroundColor="DarkSlateGray";
 			} else {
-				keyPressed='r';
-				console.log('R mousedown');
+				keyPressed='v';
 				document.getElementById('Ckeypress').style.backgroundColor="DarkSlateGray";
 				document.getElementById('Vkeypress').style.backgroundColor="red";
 			}
@@ -120,13 +118,13 @@
 		cellIDs = ["C1","C1","C1","C1","C1"];
 		keyPressed="";
 		activity = [
-			['Deployment Report','f',10],
+			['Deployment Report','c',10],
 			['MeetingAccept','',10],
 			['MonthlyStatus','',10],
 			['Phishing','',-1000],
-			['Accept Rating','r',100],
-			['PunchIn','r',100],
-			['Client Timesheet','f',10],
+			['Accept Rating','v',100],
+			['PunchIn','v',100],
+			['Client Timesheet','c',10],
 			['Company Timesheet','',100],
 			['Weekly Status','',100]
 		];
