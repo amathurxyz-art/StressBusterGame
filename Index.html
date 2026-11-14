@@ -76,16 +76,22 @@
 			</tr>			
 		<table>
 	<script>
-		
+		function playSound() {
+			console.log("Paying Sound");
+			const audio = new Audio('Game/KeyboardClick.mp3');
+			audio.play();
+		}
 		function getRandomNumber(min,max) {
 			return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
 		
 		document.getElementById('Pkeypress').addEventListener("touchstart", function(e) {
+			playSound();
 			togglePause();
 		});
 		
 		document.getElementById('Ckeypress').addEventListener("touchstart", function(e) {
+			playSound();
 			if (keyPressed=='c') {
 				keyPressed='';
 				document.getElementById('Ckeypress').style.backgroundColor="DarkSlateGray";
@@ -98,6 +104,7 @@
 		});
 		
 		document.getElementById('Vkeypress').addEventListener("touchstart", function(e) {
+			playSound();
 			if (keyPressed=='v') {
 				keyPressed='';
 				document.getElementById('Ckeypress').style.backgroundColor="DarkSlateGray";
@@ -159,7 +166,7 @@
 		
 
 		document.addEventListener('keydown', function(event) {
-			//document.getElementById("StatusLine").innerHTML=event.key;
+			playSound();
 			keyPressed=event.key;
 			console.log(keyPressed);
 			if(keyPressed=='p') togglePause();
